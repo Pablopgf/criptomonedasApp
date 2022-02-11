@@ -1,0 +1,32 @@
+<h2>Por Ranking</h2>
+<hr>
+<div *ngIf="criptomonedas.length > 0" class="row">
+  <div class="col">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th> # </th>
+          <th> Logo </th>
+          <th> Símbolo </th>
+          <th> Nombre </th>
+          <th> Precio </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let criptomoneda of criptomonedas; let i = index">
+          <td> {{ i + 1 }} </td>
+          <td>
+            <img class="small-flag img-fluid" [src]="criptomoneda.logo_url">
+          </td>
+          <td> {{criptomoneda.symbol }} </td>
+          <td> {{criptomoneda.name }} </td>
+          <td> {{criptomoneda.price }} €</td>
+          <td>
+            <a [routerLink]="['/criptomoneda', criptomoneda.id]">Ver...</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

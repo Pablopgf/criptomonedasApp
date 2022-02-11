@@ -1,0 +1,39 @@
+<div *ngIf="!criptomoneda; else divPais" class="alert alert-info">
+  Espere por favor...
+</div>
+<ng-template #divPais>
+  <div class="row">
+    <div class="col-12">
+      <h1>Criptomoneda: <small>{{criptomoneda.name}} </small></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <h3>Logo</h3>
+      <img [src]="criptomoneda.logo_url" class="img-thumbnail img-fluid" />
+    </div>
+    <div class="col">
+      <h3>Información</h3>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Ranking</strong> #{{ criptomoneda.rank }}
+        </li>
+        <li class="list-group-item">
+          <strong>Símbolo</strong> {{ criptomoneda.symbol }}
+        </li>
+        <li class="list-group-item">
+          <strong>Precio</strong> {{ criptomoneda.price }} €
+        </li>
+        <li class="list-group-item">
+          <strong>Capitalización de mercado</strong> {{ criptomoneda.market_cap }}
+        </li>
+        <li class="list-group-item">
+          <strong>Suministro total</strong> {{ criptomoneda.max_supply }}
+        </li>
+        <li class="list-group-item">
+          <strong>Suministro en circulación</strong> {{ criptomoneda.circulating_supply }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>

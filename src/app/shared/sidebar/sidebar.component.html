@@ -1,0 +1,21 @@
+<h2>Búsquedas</h2>
+<hr>
+<ul class="list-group">
+  <li routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="list-group-item">
+    Buscar criptomoneda
+  </li>
+  <li routerLink="ranking" routerLinkActive="active" class="list-group-item">
+    Ranking criptomonedas
+  </li>
+</ul>
+<div *ngIf="historial.length > 0">
+  <hr>
+  <h2>Historial</h2>
+  <hr>
+  <div class="list-group list-reset">
+    <a *ngFor="let item of historial" (click)="buscar(item)" [routerLink]="['/criptomoneda', item]"
+      class="list-group-item list-group-item-action">
+      {{ item }}
+    </a>
+  </div>
+</div>
